@@ -1,7 +1,7 @@
 # Kamatimer
 ###### *Kamatis* is Filipino for tomato.
 
-My goal for this project is to create a simple web app for a pomodor timer that suits my own needs in hopes of being just a bit more productive. Will consider making into a Chrome extension after initial implementation.
+My goal for this project is to create a simple web app for a pomodoro timer that suits my own needs in hopes of being just a bit more productive. Will consider making into a Chrome extension after initial implementation.
 
 ---
 
