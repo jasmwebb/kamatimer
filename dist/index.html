@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="css/main.min.css">
+
+  <title>Kamatimer</title>
+</head>
+<body>
+  <main id="timer-container">
+    <div id="timer-countdown">00 : 00</div>
+
+    <div id="timer-controls">
+      <!-- Show when timer is not running, before work session -->
+      <div id="work-btns" class="start-btns">
+        <p>How long will this work session be?</p>
+        <button>25</button>
+        <button>30</button>
+        <button>45</button>
+      </div>
+
+      <!-- Show when timer is not running, before break session -->
+      <div id="break-btns" class="start-btns">
+        <p>Ready to start your <span id="break-mins"></span>-minute break?</p>
+        <button>Yep</button>
+      </div>
+      
+      <!-- Show when timer is running -->
+      <div id="run-btns">
+        <button>Pause</button>
+        <!-- Disabled when timer is running, enabled after "pause" click -->
+        <button disabled>Reset</button>
+      </div>
+    </div>
+
+    <div id="sessions-tally">
+      <i id="session-1" class="fas fa-seedling"></i>
+      <i id="session-2" class="fas fa-seedling"></i>
+      <i id="session-3" class="fas fa-seedling"></i>
+      <i id="session-4" class="fas fa-seedling"></i>
+    </div>
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
