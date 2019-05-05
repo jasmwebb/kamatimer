@@ -1,0 +1,55 @@
+@import "config";
+
+body {
+  background: lighten($secondary-color, 12);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  color: $text-color;
+}
+
+#timer-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 70%;
+  margin: 30vh auto;
+  padding: 0.2rem;
+  background: $primary-color;
+  border-bottom: 4px solid $secondary-color;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  box-shadow: 4px 4px 12px lighten($contrast-color, 35),
+    1px 1px 8px $primary-color,
+    2px 2px 2px $highlight-color;
+
+    #timer-countdown {
+      font-size: 4rem;
+      color: $contrast-color;
+    }
+
+    #sessions-tally {
+      margin: 1.5rem 0 0.5rem 0;
+      font-size: 1.7rem;
+      color:  $highlight-color;
+
+      .tally {
+        margin: 0 0.5rem;
+      }
+
+      .not-done {
+        display: none;
+      }
+    }
+}
+
+button {
+  background: $secondary-color;
+  font-size: 1.6rem;
+  margin: 0 0.5rem;
+  padding: 0.4rem 1.4rem;
+  border: 1px dotted $primary-color;
+  border-radius: 5px;
+  box-shadow: 0 0 3px darken($primary-color, 10);
+}

@@ -18,31 +18,32 @@
     <div id="timer-controls">
       <!-- Show when timer is not running, before work session -->
       <div id="work-btns" class="start-btns">
-        <p>How long will this work session be?</p>
-        <button>25</button>
-        <button>30</button>
-        <button>45</button>
+        <p>How many minutes can you dedicate to your task?</p>
+        <button id="start-25">25</button>
+        <button id="start-30">30</button>
+        <button id="start-45">45</button>
       </div>
 
-      <!-- Show when timer is not running, before break session -->
+      <!-- Show when timer is not running, before break session 
       <div id="break-btns" class="start-btns">
         <p>Ready to start your <span id="break-mins"></span>-minute break?</p>
         <button>Yep</button>
       </div>
       
-      <!-- Show when timer is running -->
+      Show when timer is running
       <div id="run-btns">
         <button>Pause</button>
-        <!-- Disabled when timer is running, enabled after "pause" click -->
+        Disabled when timer is running, enabled after "pause" click
         <button disabled>Reset</button>
       </div>
     </div>
+     -->
 
     <div id="sessions-tally">
-      <i id="session-1" class="fas fa-seedling"></i>
-      <i id="session-2" class="fas fa-seedling"></i>
-      <i id="session-3" class="fas fa-seedling"></i>
-      <i id="session-4" class="fas fa-seedling"></i>
+      <i id="session-1" class="fas fa-seedling tally not-done"></i>
+      <i id="session-2" class="fas fa-seedling tally not-done"></i>
+      <i id="session-3" class="fas fa-seedling tally not-done"></i>
+      <i id="session-4" class="fas fa-seedling tally not-done"></i>
     </div>
   </main>
 
