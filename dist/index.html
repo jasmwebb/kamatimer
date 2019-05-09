@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+  <!-- Favicons - from favicon.io -->
+  <link rel="apple-touch-icon" sizes="180x180" href="static/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="static/favicon//favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="static/favicon//favicon-16x16.png">
+  <link rel="manifest" href="static/favicon/site.webmanifest">
+
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
   <link rel="stylesheet" href="css/main.min.css">
@@ -13,12 +19,13 @@
 </head>
 <body>
   <main id="timer-container">
-    <div id="timer-countdown">00 : 00</div>
+    <div id="timer-countdown">00:00</div>
 
     <div id="timer-controls">
       <!-- Show when timer is not running, before work session -->
       <div id="work-btns" class="start-btns">
         <p>How many minutes can you dedicate to your task?</p>
+        <button id="test">1</button>
         <button id="start-25">25</button>
         <button id="start-30">30</button>
         <button id="start-45">45</button>
@@ -29,21 +36,20 @@
         <p>Ready to start your <span id="break-mins"></span>-minute break?</p>
         <button>Yep</button>
       </div>
+      -->
       
-      Show when timer is running
+      <!-- Show when timer is running -->
       <div id="run-btns">
-        <button>Pause</button>
-        Disabled when timer is running, enabled after "pause" click
-        <button disabled>Reset</button>
+        <p></p>
+        <button id="stop-btn">end session early</button>
       </div>
     </div>
-     -->
 
     <div id="sessions-tally">
-      <i id="session-1" class="fas fa-seedling tally not-done"></i>
-      <i id="session-2" class="fas fa-seedling tally not-done"></i>
-      <i id="session-3" class="fas fa-seedling tally not-done"></i>
-      <i id="session-4" class="fas fa-seedling tally not-done"></i>
+      <i id="session-1" class="fas fa-seedling tally"></i>
+      <i id="session-2" class="fas fa-seedling tally"></i>
+      <i id="session-3" class="fas fa-seedling tally"></i>
+      <i id="session-4" class="fas fa-seedling tally"></i>
     </div>
   </main>
 
