@@ -1,12 +1,15 @@
 // Select start buttons and set timer durations in milliseconds
 const test = document.getElementById("test");
-test.duration = 60;
+test.duration = 3;
 const start25 = document.getElementById("start-25");
 start25.duration = 25 * 60;
 const start30 = document.getElementById("start-30");
 start30.duration = 30 * 60;
 const start45 = document.getElementById("start-45");
 start45.duration = 45 * 60;
+
+// Keep track of tallies
+let completedSessions = 0;
 
 // Select other timer elements
 const countdown = document.getElementById("timer-countdown");
@@ -42,6 +45,19 @@ function timer(e) {
       runBtns.style.display = "none";
       workBtns.style.display = "inherit";
       document.title = "Kamatimer";
+      toggleTally();
     }
   }, 1000);
+}
+
+function toggleTally() {
+  if (completedSessions < 4) {
+    completedSessions++;
+    document.getElementById(`session-${completedSessions}`).classList.add("done");
+  } else {
+    for (let i = 1; i <= 4; i++) {
+      document.getElementById(`session-${i}`).classList.remove("done");
+    }
+    completedSessions = 0;
+  }
 }
