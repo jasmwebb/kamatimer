@@ -9,7 +9,7 @@ My goal for this project is to create a simple web app for a pomodoro timer that
 - Variable timer limit for work sessions (25, 30, 45 minutes)
 - 5 minute breaks initiated after every work session
 - Every four work sessions, prompt for a break of variable time limit (15, 20, 30 minutes)
-- Pause/resume/end session controls
+- Option to end session early
 
 ### Feature Wishlist
 - Prompt for to-do list before first session
