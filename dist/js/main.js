@@ -8,7 +8,8 @@ start30.duration = 30 * 60;
 const start45 = document.getElementById("start-45");
 start45.duration = 45 * 60;
 
-// Keep track of tallies
+// Initialize countdown display and tallies
+let display;
 let completedSessions = 0;
 
 // Select other timer elements
@@ -22,7 +23,7 @@ test.addEventListener("click", timer);
 start25.addEventListener("click", timer);
 start30.addEventListener("click", timer);
 start45.addEventListener("click", timer);
-stopBtn.addEventListener("click", Window.clearInterval);
+stopBtn.addEventListener("click", stopTimer);
 
 function timer(e) {
   let duration = e.target.duration;
@@ -32,7 +33,7 @@ function timer(e) {
   workBtns.style.display = "none";
   runBtns.style.display = "inherit";
 
-  const display = setInterval(() => {
+  display = setInterval(() => {
     if (Date.now() < endTime || duration >= 0) {
       let minutes = Math.floor(duration / 60);
       let seconds = duration % 60;
@@ -41,13 +42,18 @@ function timer(e) {
       document.title = timeRemaining;
       duration--;
     } else {
-      clearInterval(display);
-      runBtns.style.display = "none";
-      workBtns.style.display = "inherit";
-      document.title = "Kamatimer";
+      stopTimer();
       toggleTally();
     }
   }, 1000);
+}
+
+function stopTimer() {
+  clearInterval(display);
+  countdown.innerHTML = "00:00";
+  runBtns.style.display = "none";
+  workBtns.style.display = "inherit";
+  document.title = "Kamatimer";
 }
 
 function toggleTally() {
