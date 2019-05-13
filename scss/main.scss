@@ -50,11 +50,11 @@ body {
 }
 
 #timer-controls {
-  #run-btns {
+  #run-btns, #break-btn {
     display: none;
   }
 
-  #stop-btn {
+  .response {
     font-size: 1rem;
     font-weight: 400;
     font-style: italic;
