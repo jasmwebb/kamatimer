@@ -61,6 +61,14 @@ body {
   }
 }
 
+#info {
+  position: absolute;
+  top: 1vh;
+  left: 95vw;
+  font-size: 1.5rem;
+  color: $contrast-color;
+}
+
 button {
   background: $secondary-color;
   font-size: 1.5rem;

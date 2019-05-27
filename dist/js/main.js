@@ -17,10 +17,11 @@ start45.longBreak = 30 * 60;
 start45.wasBreak = false;
 let startBreak = setBreak(1);
 
-// Initialize countdown display, session type, and tallies
+// Initialize countdown display, session type, tallies, and notification sound
 let display;
 let wasBreak;
 let completedSessions = 0;
+const notifSound = new Audio("static/notification_mallet_synth_dreamy_013.mp3");
 
 // Select other timer elements
 const countdown = document.getElementById("timer-countdown");
@@ -70,6 +71,7 @@ function stopTimer(manual = true, longBreak) {
   // Reset timer display
   clearInterval(display);
   countdown.innerHTML = "00:00";
+  notifSound.play();
   document.title = "Kamatimer";
   runBtns.style.display = "none";
 
