@@ -1,8 +1,4 @@
 // Select start buttons and set timer durations in milliseconds
-const test = document.getElementById("test");
-test.duration = 1;
-test.longBreak = 3;
-test.wasBreak = false;
 const start25 = document.getElementById("start-25");
 start25.duration = 25 * 60;
 start25.longBreak = 15 * 60;
@@ -21,7 +17,7 @@ let startBreak = setBreak(1);
 let display;
 let wasBreak;
 let completedSessions = 0;
-const notifSound = new Audio("static/notification_mallet_synth_dreamy_013.mp3");
+const notifSound = new Audio("dist/static/notification_mallet_synth_dreamy_013.mp3");
 
 // Select other timer elements
 const countdown = document.getElementById("timer-countdown");
@@ -32,7 +28,6 @@ const breakBtn = document.getElementById("break-btn");
 const breakMins = document.getElementById("break-mins");
 
 // Create event listeners for timer controls
-test.addEventListener("click", timer);
 start25.addEventListener("click", timer);
 start30.addEventListener("click", timer);
 start45.addEventListener("click", timer);
@@ -71,9 +66,12 @@ function stopTimer(manual = true, longBreak) {
   // Reset timer display
   clearInterval(display);
   countdown.innerHTML = "00:00";
-  notifSound.play();
   document.title = "Kamatimer";
   runBtns.style.display = "none";
+
+  if (!manual) {
+    notifSound.play();
+  }
 
   if (wasBreak) { // Last session was a break
     if (manual) { // User ended timer manually
