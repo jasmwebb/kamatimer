@@ -17,7 +17,7 @@ let startBreak = setBreak(1);
 let display;
 let wasBreak;
 let completedSessions = 0;
-const notifSound = new Audio("dist/static/notification_mallet_synth_dreamy_013.mp3");
+const notifSound = new Audio("../static/notification_mallet_synth_dreamy_013.mp3");
 
 // Select other timer elements
 const countdown = document.getElementById("timer-countdown");
@@ -34,11 +34,11 @@ start45.addEventListener("click", timer);
 stopBtn.addEventListener("click", stopTimer);
 startBreak.addEventListener("click", timer);
 
-function timer(e) {
-  let duration = e.target.duration;
+function timer() {
+  let duration = this.duration;
   const startTime = Date.now();
   const endTime = startTime + (duration * 1000);
-  wasBreak = e.target.wasBreak;
+  wasBreak = this.wasBreak;
 
   workBtns.style.display = "none"; // Hide work session start buttons
   breakBtn.style.display = "none"; // Hide break start button
@@ -57,7 +57,7 @@ function timer(e) {
         toggleTally(); // Advance tallies
       }
 
-      stopTimer(false, e.target.longBreak);
+      stopTimer(false, this.longBreak);
     }
   }, 1000);
 }
